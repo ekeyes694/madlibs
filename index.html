@@ -3,42 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <title>nGMadLibs</title>
-   <script src="https://code.angularjs.org/1.3.10/angular.js"></script>
-
-</head>
+   </head>
 <body ng-app="myApp">
   <div ng-controller="oneController">
-  <form>
-  <input ng-model="one" type="text" placeholder="Plural Noun">
-  <input ng-model="two" type="text" placeholder="Person in Room(Last Name)">
-  <input ng-model="three" type="text" placeholder="Adjective">
-  <input ng-model="four" type="text" placeholder="Noun">
-  <input ng-model="five" type="text" placeholder="Noun">
-  <input ng-model="six" type="text" placeholder="Part of the Body">
-  <input ng-model="seven" type="text" placeholder="Part of the Body">
-  <input ng-model="eight" type="text" placeholder="Plural Noun">
-  <input ng-model="nine" type="text" placeholder="Noun">
-  <input ng-model="ten" type="text" placeholder="Noun">
-  <input ng-model="eleven" type="text" placeholder="Exclamation">
-  <input ng-model="twelve" type="text" placeholder="Noun">
-  <input ng-model="thirteen" type="text" placeholder="Noun">
-  <input ng-model="fourteen" type="text" placeholder="Noun">
-  <input ng-model="fifteen" type="text" placeholder="Verb">
-  <input ng-model="sixteen" type="text" placeholder="Adjective">
-  <input ng-model="seventeen" type="text" placeholder="Noun">
+  <form name="myForm" ng-submit="submitted=true;submit()" novalidate>
+  <input ng-model="data.one" name="texty" type="text" placeholder="Person in Room(Last Name)" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Last Name is required!
+</span>
+  <input ng-model="data.two" name="texty" type="text" placeholder="Plural Noun" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Plural Noun is required!
+</span>
+  <input ng-model="data.three" name="texty" type="text" placeholder="Adjective" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    An Adjective is required!
+</span>
+  <input ng-model="data.four" name="texty" type="text" placeholder="Noun" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Noun is required!
+</span>
+  <input ng-model="data.five" name="texty" type="text" placeholder="Noun" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Noun is required!
+</span>
+  <input ng-model="data.six" name="texty" type="text" placeholder="Part of the Body" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Part of the Body is required!
+</span>
+  <input ng-model="data.seven" name="texty" type="text" placeholder="Part of the Body" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Part of the Body is required!
+</span>
+  <input ng-model="data.eight" name="texty" type="text" placeholder="Plural Noun" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Plural Noun is required!
+</span>
+  <input ng-model="data.nine" name="texty" type="text" placeholder="Noun" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Noun is required!
+</span>
+  <input ng-model="data.ten" name="texty" type="text" placeholder="Noun" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Noun is required!
+</span>
+  <input ng-model="data.eleven" name="texty" type="text" placeholder="Exclamation" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    An Exclamation is required!
+</span>
+  <input ng-model="data.twelve" name="texty" type="text" placeholder="Noun" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Noun is required!
+</span>
+  <input ng-model="data.thirteen" name="texty" type="text" placeholder="Noun" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Noun is required!
+</span>
+  <input ng-model="data.fourteen" name="texty" type="text" placeholder="Noun" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Noun is required!
+</span>
+  <input ng-model="data.fifteen" name="texty" type="text" placeholder="Verb" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Verb is required!
+</span>
+  <input ng-model="data.sixteen" name="texty" type="text" placeholder="Adjective" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    An Adjective is required!
+</span>
+  <input ng-model="data.seventeen" name="texty" type="text" placeholder="Noun" required>
+  <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+    A Noun is required!
+</span>
+<button class="submit" ng-click="submit()">Submit</button>
+<button class="reset" ng-click="reset()">Reset</button>
 </form>
-  <p>Patient: Thank you very much for seeing me, doctor {{one}} , on such {{two}} notice.
-    Dentist: What is your problem, young {{three}}?
-    Patient: I have a pain in my upper {{four}} , which is giving me a severe {{five}} ache.
-    Dentist: Let me take a look. Open your {{six}} wide. Good. now I'm going to tap your {{seven}} with my {{eight}}.
-    Patient: Shouldn't you give me a/an {{nine}} killer?
-    Dentist: It's not necessary yet {{ten}}. I think I see a/an {{eleven}} in your upper {{twelve}}.
+
+<div id="paragraph">
+  <p ng-hide="hideText">Patient: Thank you very much for seeing me, Doctor {{data.one}}, on such {{data.two}} notice.
+    Dentist: What is your problem, young {{data.three}}?
+    Patient: I have a pain in my upper {{data.four}}, which is giving me a severe {{data.five}} ache.
+    Dentist: Let me take a look. Open your {{data.six}} wide. Good. now I'm going to tap your {{data.seven}} with my {{data.eight}}.
+    Patient: Shouldn't you give me a/an {{data.nine}} killer?
+    Dentist: It's not necessary yet {{data.ten}}. I think I see a/an {{data.eleven}} in your upper {{data.twelve}}.
     Patient: Are you going to pull my {{thirteen}} out?
-    Dentist: No, I'm going to {{fourteen}} your tooth and put in a temporary {{fifteen}}.
-    Patient: When do i come back for the {{sixteen}} filling?
-    Dentist: A day after I cash your {{seventeen}}.
+    Dentist: No, I'm going to {{data.fourteen}} your tooth and put in a temporary {{data.fifteen}}.
+    Patient: When do i come back for the {{data.sixteen}} filling?
+    Dentist: A day after I cash your {{data.seventeen}}.
   </p>
 </div>
+</div>
+<script src="https://code.angularjs.org/1.3.10/angular.js"></script>
  <script defer src="script.js"></script>
 </body>
 </html>
