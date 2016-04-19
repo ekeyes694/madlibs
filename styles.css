@@ -1,0 +1,45 @@
+#content{
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .5em;
+}
+.face{
+  height: 50px;
+}
+input[type=text]{
+  display: inline-block;
+  padding: .5em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1em;
+  box-shadow: 10px 5px 5px black;
+}
+.error{
+  font-size: 12px;
+  margin-left: .8em;
+
+}
+.word{
+  color: red;
+}
+.submit{
+  margin-left: 20em;
+  padding: 1em;
+  border-radius: .5em;
+  box-shadow: 10px 5px 5px black;
+}
+.reset{
+  margin-left: 1em;
+  margin-top: 2em;
+  padding: 1em;
+  border-radius: .5em;
+  box-shadow: 10px 5px 5px black;
+}
+
+p{
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .5em;
+}
