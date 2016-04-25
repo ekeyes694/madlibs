@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>nGMadLibs</title>
+  <script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-animate.js"></script>
+  <script type="text/javascript" src="https://code.angularjs.org/1.3.10/angular-animate.min.js"></script>
+  <script src="script.js"></script>
   <link rel="stylesheet" href="styles.css">
    </head>
-<body ng-app="myApp">
-  <div id ="content" ng-controller="oneController">
+<body ng-app="myApp" ng-controller="oneController">
+  <div id ="main">
   <img src="mad-lib-happy-face.png" class="face">
   <h1>Visit to the Dentist Mad Lib</h1>
 
@@ -80,12 +84,12 @@
     A Noun is required!
 </span>
 <br>
-<button class="submit" ng-click="submit()">Submit</button>
+<button class="submit" ng-click="submit(); show=!show">Submit</button>
 <button class="reset" ng-click="reset()">Reset</button>
 </form>
 
 <div id="paragraph">
-  <p ng-hide="hideText">Patient: Thank you very much for seeing me, Doctor <span class="word">{{data.one}}</span>, on such <span class="word">{{data.two}}</span> notice.<br>
+  <p ng-show="show" class="content">Patient: Thank you very much for seeing me, Doctor <span class="word">{{data.one}}</span>, on such <span class="word">{{data.two}}</span> notice.<br>
     Dentist: What is your problem, young <span class="word">{{data.three}}</span>?<br>
     Patient: I have a pain in my upper <span class="word">{{data.four}}</span>, which is giving me a severe <span class="word">{{data.five}}</span> ache.<br>
     Dentist: Let me take a look. Open your <span class="word">{{data.six}}</span> wide. Good. now I'm going to tap your <span class="word">{{data.seven}}</span> with my <span class="word">{{data.eight}}</span>.<br>
@@ -98,7 +102,5 @@
   </p>
 </div>
 </div>
-<script src="https://code.angularjs.org/1.3.10/angular.js"></script>
- <script defer src="script.js"></script>
-</body><br>
+</body>
 </html>
